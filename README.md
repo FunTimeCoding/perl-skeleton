@@ -15,6 +15,12 @@ bin/ps
 
 This section explains how to use scripts that are intended to ease the development of this project.
 
+Install develoment tools.
+
+```sh
+# TODO: Explain how to install tools required for the development of this project.
+```
+
 Show library documentation.
 
 ```sh
@@ -22,9 +28,10 @@ perldoc FindBin
 perldoc Test::More
 ```
 
-Run tests.
+Run style check and tests.
 
 ```sh
+./run-style-check.sh
 ./run-tests.sh
 ```
 
