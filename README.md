@@ -1,10 +1,21 @@
 # PerlSkeleton
 
+## Setup
+
+This section explains how to install and uninstall the project.
+
+Install project dependencies.
+
+```sh
+script/setup.sh
+```
+
+
 ## Usage
 
-This section explains how to use this project.
+This section explains how to use the project.
 
-Run the main entry point program.
+Run the main program.
 
 ```sh
 bin/ps
@@ -13,30 +24,40 @@ bin/ps
 
 ## Development
 
-This section explains how to use scripts that are intended to ease the development of this project.
+This section explains how to improve the project.
 
-Install development tools.
+Configure Git on Windows before cloning. This avoids problems with Vagrant and VirtualBox.
 
 ```sh
-# TODO: Explain how to install tools required for the development of this project.
+git config --global core.autocrlf input
 ```
 
-Show library documentation.
+Create the development virtual machine on Linux and Darwin.
 
 ```sh
-perldoc FindBin
-perldoc Test::More
+script/vagrant/create.sh
 ```
 
-Run style check and tests.
+Create the development virtual machine on Windows.
 
-```sh
-./run-style-check.sh
-./run-tests.sh
+```bat
+script\vagrant\create.bat
 ```
 
-Build the project like Jenkins.
+Run tests.
 
 ```sh
-./build.sh
+script/test.sh [--help]
+```
+
+Run style check.
+
+```sh
+script/check.sh [--help]
+```
+
+Build project.
+
+```sh
+script/build.sh
 ```
