@@ -2,3 +2,4 @@ shellcheck
 OPTIND
 mkdir
 tmp
+ps
