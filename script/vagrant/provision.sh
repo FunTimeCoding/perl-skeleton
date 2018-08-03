@@ -9,6 +9,6 @@ if [ "${CODENAME}" = jessie ]; then
     apt-get --quiet 2 install vim multitail htop tree git
 elif [ "${CODENAME}" = stretch ]; then
     apt-get --quiet 2 install neovim multitail htop tree git shellcheck hunspell
-    # build-essential is required by perlbrew.
-    apt-get --quiet 2 install perl perl6 build-essential
+    # build-essential and zip are required by perlbrew.
+    apt-get --quiet 2 install perl perl6 build-essential zip
 fi
