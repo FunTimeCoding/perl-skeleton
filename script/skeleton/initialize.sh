@@ -30,6 +30,7 @@ UNDERSCORE=$(echo "${DASH}" | ${SED} --regexp-extended 's/-/_/g')
 # shellcheck disable=SC2016
 ${FIND} . -regextype posix-extended -type f ! -regex "${EXCLUDE_FILTER}" -exec sh -c '${1} --in-place --expression "s/PerlSkeleton/${2}/g" --expression "s/perl-skeleton/${3}/g" --expression "s/perl_skeleton/${4}/g" --expression "s/bin\/ps/bin\/${5}/g" --expression "s/ps\\\\/${5}\\\\/g" "${6}"' '_' "${SED}" "${NAME}" "${DASH}" "${UNDERSCORE}" "${INITIALS}" '{}' \;
 git mv test/test_perl_skeleton.pl "test/test_${UNDERSCORE}.pl"
-git mv lib/perl_skeleton.pm "lib/${UNDERSCORE}.pm"
+git mv module/perl_skeleton/perl_skeleton.pm "module/perl_skeleton/${UNDERSCORE}.pm"
+git mv module/perl_skeleton "module/${UNDERSCORE}"
 git mv bin/ps "bin/${INITIALS}"
 echo "# This dictionary file is for domain language." > "documentation/dictionary/${DASH}.dic"
